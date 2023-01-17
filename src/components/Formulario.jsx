@@ -1,6 +1,4 @@
-
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const Formulario = () => {
@@ -10,6 +8,6 @@ const Formulario = () => {
         Contraseña <Form.Control type="password"/>
     </Form>
   );
-}
+};
 
 export default Formulario;
