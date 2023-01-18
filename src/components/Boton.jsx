@@ -1,9 +1,11 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 
-const Boton = () => {
-    return (
-    <Button variant="dark">iniciar sesión</Button>
+const Boton = (props) => {
+  const {title} = props;
+  
+  return (
+    <Button type='submit' variant="dark">{title}</Button>
     );
   };
   

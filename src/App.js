@@ -8,7 +8,7 @@ return (
 
   <div className='App-container'>
     <Formulario/>
-    <Boton/>
+    <Boton title="iniciar sesión" />
   </div>
 
 );
