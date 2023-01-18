@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import Form from 'react-bootstrap/Form';
 
 import { useState } from 'react';
@@ -10,6 +10,7 @@ const Formulario = () => {
 
  
   return (
+   
     <Form className='formulario'>
         <Form.Label>Nombre</Form.Label>
         <Form.Control type="text" name='nombre' onChange={(e) => setNombre(e.target.value)} value={nombre}/>
@@ -17,7 +18,8 @@ const Formulario = () => {
         <Form.Label>Contraseña</Form.Label>
         <Form.Control type="password" name='password' onChange={(e) => setPassword(e.target.value)} value={password}/>
     </Form>
+ 
   );
 }
 
-export default Formulario;
+export default Formulario;*/

@@ -5,7 +5,7 @@ const Boton = (props) => {
   const {title} = props;
   
   return (
-    <Button type='submit' variant="dark">{title}</Button>
+    <Button className='my-3' type='submit' variant="dark">{title}</Button>
     );
   };
   
