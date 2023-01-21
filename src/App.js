@@ -7,8 +7,11 @@ function App() {
   const [nombre, setNombre] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const [mensajeOK, setMensajeOK] = useState(false);
+
   const validarDatos = (e) => {
       e.preventDefault();
+
 
   if(nombre !=='ADL'|| password !=='252525')
     {
@@ -16,6 +19,7 @@ function App() {
       return;
     } 
       setError(false);
+      setMensajeOK(true);
       setNombre('');
       setPassword('');
     };
@@ -25,7 +29,7 @@ function App() {
   <div className='App-container'>
 
     <Form className='formulario m-5' onSubmit={validarDatos}>
-      {error ? <p className='bg-danger text-white text-center'>Los datos son incorrectos</p> :null}
+      {error ? <p className='bg-danger text-white text-center'>Los datos son incorrectos</p>: mensajeOK ? <p className='bg-success text-white text-center'>Sesión iniciada correctamente!</p>:null}
         <Form.Label>Nombre</Form.Label>
         <Form.Control
           onChange={(e) => setNombre(e.target.value)}
