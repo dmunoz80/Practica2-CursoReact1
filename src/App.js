@@ -3,30 +3,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Form from 'react-bootstrap/Form';
 import Boton from './components/Boton';
-
 function App() {
-
-
   const [nombre, setNombre] = useState("");
   const [password, setPassword] = useState("");
-  const [error1, setError1] = useState(false);
-  const [error2, setError2] = useState(false);
-  
+  const [error, setError] = useState(false);
   const validarDatos = (e) => {
       e.preventDefault();
 
-      if( nombre ===''|| password ==='')
+  if(nombre !=='ADL'|| password !=='252525')
     {
-      setError1(true);
-      return;
-    }  
-      else if( nombre !=='ADL'|| password !=='252525')
-    {
-      setError2(true);
-      setError1(false);
+      setError(true);
       return;
     } 
-      setError2(false);
+      setError(false);
       setNombre('');
       setPassword('');
     };
@@ -36,21 +25,21 @@ function App() {
   <div className='App-container'>
 
     <Form className='formulario m-5' onSubmit={validarDatos}>
-      {error1 ? <p className='bg-warning text-white text-center'>Debe ingresar datos!</p> : error2 ? <p className='bg-danger text-white text-center'>Los datos son incorrectos</p> : null}
+      {error ? <p className='bg-danger text-white text-center'>Los datos son incorrectos</p> :null}
         <Form.Label>Nombre</Form.Label>
         <Form.Control
-        onChange={(e) => setNombre(e.target.value)}
-        value={nombre}
+          onChange={(e) => setNombre(e.target.value)}
+          value={nombre}
         />
 
         <Form.Label>Contraseña</Form.Label>
         <Form.Control 
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
         />
+        
+        <div className='mt-3'>{nombre !=='' && password !=='' && <Boton title='Iniciar sesión'/>}</div>
 
-        <Boton title='iniciar sesión'/>
-    
     </Form>
 
   </div>
